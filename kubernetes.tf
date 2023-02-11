@@ -56,6 +56,7 @@ resource "yandex_kubernetes_node_group" "test-group-auto" {
 
     network_interface {
       nat = true
+      subnet_ids = ["${yandex_vpc_subnet.internal-a.id}"]
     }
 
     resources {
